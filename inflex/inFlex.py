@@ -11,12 +11,6 @@ except:
 from src.Compiler import run
 from src.Values import Empty
 
-def signalHandler(sig, frame):
-	print("\n\nSaliendo...")
-	sys.exit(0)
-
-signal.signal(signal.SIGINT, signalHandler)
-
 def main():
   for arg in sys.argv:
     if arg == '-':
@@ -58,7 +52,6 @@ def main():
       elif len(result.elements) > 1:
         print(repr(result))
 
-    folder = os.path.basename(os.getcwd())
     sys.exit(0)
 
 if __name__ == "__main__":
